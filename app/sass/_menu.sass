@@ -1,0 +1,129 @@
+@import "vars"
+
+.mobile-menu
+  display: none
+  position: fixed
+  left: 0
+  top: 0
+  height: 100%
+  z-index: 5
+  background: url("../img/bg-mobile.jpg") no-repeat center
+    size: cover
+  padding: 45px 50px
+  overflow-x: auto
+  max-width: 855px
+  width: 100%
+  font-family: "Open Sans", sans-serif
+  .logo
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 400px
+    margin: 0 auto 40px
+  .btn-white
+    height: 91px
+    font-size: 30px
+    font-weight: 600
+    font-family: "Open Sans", sans-serif
+    max-width: 365px
+    margin: 0 50px 0 0
+    width: 100%
+  .list-social li a
+    .social-icon
+      margin: 0
+    .svg-icon
+      fill: #fff
+  .inst-links
+    .social-icon
+      width: 50px
+      height: 50px
+  .fb-links
+    .social-icon
+      width: 40px
+      height: 50px
+  .phone
+    font-size: 55px
+    color: #fff
+    margin: 0 0 40px
+  .mail
+    font-size: 30px
+    color: #fff
+    width: fit-content
+    border-bottom: 1px solid $accent
+
+
+.btn-close
+  position: absolute
+  top: 87px
+  left: 55px
+  width: 40px
+  height: 40px
+  display: flex
+  align-items: center
+  justify-content: center
+  &:before, &:after
+    width: 2px
+    height: 100%
+    background: #ffffff
+    border-radius: 2px
+    content: ''
+    position: absolute
+    top: 0
+    left: 20px
+  &:before
+    transform: rotate(45deg)
+  &:after
+    transform: rotate(135deg)
+
+.links-doc
+  font-size: 30px
+
+.mobile-menu__footer
+  width: 100%
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  flex-wrap: wrap
+  padding: 60px 0 0
+  margin: 50px 0 0
+  border-top: 1px solid $accent
+
+.menu
+  margin: 0 0 200px
+  padding: 0 0 0 50px
+  li
+    margin: 0 0 45px
+    &:last-child
+      margin: 0
+    a
+      color: #fff
+      font-size: 36px
+      font-weight: 600
+
+.dropdown
+  .menu-links
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &:after
+      content: ''
+      display: inline-block
+      width: 34px
+      height: 19px
+      background: url("../img/down.svg") no-repeat center
+        size: contain
+
+.dropdown.click
+  .menu-links
+    &:after
+      transform: rotate(180deg)
+
+.submenu
+  display: none
+  margin: 35px 0
+  li
+    margin: 0 0 30px
+    a
+      font-weight: normal
+      color: #bbbbbb
+      font-size: 30px
