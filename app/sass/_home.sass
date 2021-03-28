@@ -146,24 +146,35 @@
 .hotels-slider
   max-width: 870px
   width: 100%
-  .slick-current
-    .hotels-slider-item
-      margin: 0 -70px
-      opacity: 1
-      width: 728px
-      height: 812px
-      position: relative
-      z-index: 1
+  position: relative
+
 
 .hotels-slider-item
-  opacity: .05
-  width: 646px
-  height: 720px
-  display: flex
-  align-items: center
-  justify-content: center
-  margin: 40px 0 0
+  margin: 0 auto
+  opacity: 1
+  width: 100%
+  height: 812px
+  position: relative
+  padding: 0 70px
+  &:before, &:after
+    content: ''
+    opacity: .1
+    width: 646px
+    height: 720px
+    top: 50%
+    transform: translate(0,-50%)
+    position: absolute
+  &:before
+    left: 0
+    background: url("../img/gallery3.jpg") no-repeat center
+      size: cover
+  &:after
+    right: 0
+    background: url("../img/gallery1.jpg") no-repeat center
+      size: cover
   img
+    position: relative
+    z-index: 1
     width: 100%
     height: 100%
     object-fit: cover

@@ -237,9 +237,13 @@ a.color-white:hover {
   height: 36px;
   width: 100%;
   max-width: 200px; }
-  .btn-border-gradient:hover .btn-icon {
-    -webkit-transform: translateX(5px);
-            transform: translateX(5px); }
+  .btn-border-gradient:hover {
+    background: #779095;
+    color: #fff; }
+    .btn-border-gradient:hover .btn-icon {
+      fill: #fff;
+      -webkit-transform: translateX(5px);
+              transform: translateX(5px); }
 
 .btn-border-left {
   color: #6b9196;
@@ -818,30 +822,36 @@ footer {
 
 .hotels-slider {
   max-width: 870px;
-  width: 100%; }
-  .hotels-slider .slick-current .hotels-slider-item {
-    margin: 0 -70px;
-    opacity: 1;
-    width: 728px;
-    height: 812px;
-    position: relative;
-    z-index: 1; }
+  width: 100%;
+  position: relative; }
 
 .hotels-slider-item {
-  opacity: .05;
-  width: 646px;
-  height: 720px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 40px 0 0; }
+  margin: 0 auto;
+  opacity: 1;
+  width: 100%;
+  height: 812px;
+  position: relative;
+  padding: 0 70px; }
+  .hotels-slider-item:before, .hotels-slider-item:after {
+    content: '';
+    opacity: .1;
+    width: 646px;
+    height: 720px;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    position: absolute; }
+  .hotels-slider-item:before {
+    left: 0;
+    background: url("../img/gallery3.jpg") no-repeat center;
+      background-size: cover; }
+  .hotels-slider-item:after {
+    right: 0;
+    background: url("../img/gallery1.jpg") no-repeat center;
+      background-size: cover; }
   .hotels-slider-item img {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
@@ -928,7 +938,7 @@ footer {
 .mobile-menu {
   display: none;
   position: fixed;
-  left: 0;
+  right: 0;
   top: 0;
   height: 100%;
   z-index: 5;
@@ -936,7 +946,7 @@ footer {
     background-size: cover;
   padding: 45px 50px;
   overflow-x: auto;
-  max-width: 855px;
+  max-width: 426px;
   width: 100%;
   font-family: "Open Sans", sans-serif; }
   .mobile-menu .logo {
@@ -952,39 +962,48 @@ footer {
     max-width: 400px;
     margin: 0 auto 40px; }
   .mobile-menu .btn-white {
-    height: 91px;
-    font-size: 30px;
+    height: 50px;
+    font-size: 16px;
     font-weight: 600;
     font-family: "Open Sans", sans-serif;
-    max-width: 365px;
-    margin: 0 50px 0 0;
+    max-width: 160px;
+    margin: 0 auto 0 0;
     width: 100%; }
-  .mobile-menu .list-social li a .social-icon {
-    margin: 0; }
-  .mobile-menu .list-social li a .svg-icon {
-    fill: #fff; }
+  .mobile-menu .list-social {
+    margin: 20px 0 0; }
+    .mobile-menu .list-social li {
+      margin: 0 20px 0 0; }
+      .mobile-menu .list-social li:last-child {
+        margin: 0; }
+      .mobile-menu .list-social li a .social-icon {
+        margin: 0; }
+      .mobile-menu .list-social li a .svg-icon {
+        fill: #fff; }
   .mobile-menu .inst-links .social-icon {
-    width: 50px;
-    height: 50px; }
+    width: 30px;
+    height: 30px; }
   .mobile-menu .fb-links .social-icon {
-    width: 40px;
-    height: 50px; }
+    width: 30px;
+    height: 40px; }
   .mobile-menu .phone {
-    font-size: 55px;
+    font-size: 24px;
+    text-align: right;
     color: #fff;
-    margin: 0 0 40px; }
+    margin: 0 0 20px; }
   .mobile-menu .mail {
-    font-size: 30px;
+    font-size: 18px;
     color: #fff;
+    text-align: right;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    border-bottom: 1px solid #6b9196; }
+    border-bottom: 1px solid #6b9196;
+    margin: 0 0 0 auto; }
 
 .btn-close {
-  position: absolute;
-  top: 87px;
-  left: 55px;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
   width: 40px;
   height: 40px;
   display: -webkit-box;
@@ -1013,7 +1032,7 @@ footer {
             transform: rotate(135deg); }
 
 .links-doc {
-  font-size: 30px; }
+  font-size: 14px; }
 
 .mobile-menu__footer {
   width: 100%;
@@ -1023,25 +1042,26 @@ footer {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 60px 0 0;
-  margin: 50px 0 0;
+  padding: 20px 0 20px 20px;
+  margin: 20px 0 0;
   border-top: 1px solid #6b9196; }
+  .mobile-menu__footer .mobile-menu__box {
+    width: 100%; }
 
 .menu {
-  margin: 0 0 200px;
-  padding: 0 0 0 50px; }
+  margin: 0 0 60px; }
   .menu li {
-    margin: 0 0 45px; }
+    margin: 0 0 20px; }
     .menu li:last-child {
       margin: 0; }
     .menu li a {
       color: #fff;
-      font-size: 36px;
+      font-size: 20px;
       font-weight: 600; }
 
 .dropdown .menu-links {
@@ -1070,11 +1090,21 @@ footer {
   display: none;
   margin: 35px 0; }
   .submenu li {
-    margin: 0 0 30px; }
+    margin: 0 0 20px; }
     .submenu li a {
       font-weight: normal;
       color: #bbbbbb;
-      font-size: 30px; }
+      font-size: 18px; }
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(29, 29, 27, 0.65);
+  z-index: 2; }
 
 .subtitle-main {
   font-size: 36px;
@@ -1404,6 +1434,10 @@ footer {
   footer .mail {
     font-size: 16px;
     margin: 15px 0; }
+  .footer-menu li {
+    margin: 0 0 22px 0; }
+  footer .logo {
+    max-width: 250px; }
   .address {
     font-size: 16px;
     margin: 0 0 15px; }
@@ -1454,11 +1488,10 @@ footer {
     .numbers-hotels-nav__item h3 {
       font-size: 30px; }
   .hotels-slider-item {
-    width: 446px;
-    height: 520px; }
-  .hotels-slider .slick-current .hotels-slider-item {
-    width: 450px;
     height: 612px; }
+    .hotels-slider-item:before, .hotels-slider-item:after {
+      width: 446px;
+      height: 520px; }
   .hotels-slider {
     width: 560px; }
   .hotels-content {
@@ -1599,17 +1632,21 @@ footer {
     height: auto;
     opacity: 1;
     margin: 0;
-    position: relative; }
+    position: relative;
+    padding: 0; }
+    .hotels-slider-item:after {
+      display: none; }
     .hotels-slider-item:before {
-      content: '';
-      position: absolute;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
       background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.65)));
       background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
-      z-index: 1; }
+      z-index: 2;
+      -webkit-transform: none;
+              transform: none;
+      opacity: 1; }
   .title-mobile {
     display: block;
     margin: 0 0 60px;
@@ -1638,27 +1675,9 @@ footer {
       font-size: 24px; }
     .hotels-content .btn {
       margin: 30px 0 0; }
-  .mobile-menu .btn-white {
-    height: 60px;
-    font-size: 20px;
-    max-width: 200px;
-    margin: 0 20px 0 0; }
-  .mobile-menu .phone {
-    font-size: 20px;
-    margin: 0 0 20px; }
-  .mobile-menu .mail {
-    font-size: 18px; }
-  .links-doc {
-    font-size: 20px; }
   .mobile-menu__footer {
     margin: 20px 0 0;
     padding: 20px 0 0; }
-  .mobile-menu .inst-links .social-icon {
-    width: 30px;
-    height: 30px; }
-  .mobile-menu .fb-links .social-icon {
-    width: 30px;
-    height: 40px; }
   footer .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1766,9 +1785,10 @@ footer {
     .mobile-menu .logo {
       margin: 0 auto 20px;
       max-width: 250px; }
-  .btn-close {
-    top: 30px;
-    left: 30px; }
+    .mobile-menu .menu li a {
+      font-size: 20px; }
+    .mobile-menu .submenu li a {
+      font-size: 18px; }
   .menu {
     padding: 0;
     margin: 0 0 40px; }
@@ -1879,7 +1899,9 @@ footer {
       margin: 10px 0 0;
       -webkit-box-ordinal-group: 2;
           -ms-flex-order: 1;
-              order: 1; }
+              order: 1;
+      width: 100%;
+      max-width: none; }
   .number-gallery__min {
     width: 100%; }
   .neighbors-slider__item {

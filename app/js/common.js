@@ -19,9 +19,7 @@ $('.numbers-hotels-nav').slick({
 $('.numbers-hotels-gallery').slick({
     slidesToShow: 1,
     arrows: false,
-    infinite: false,
     fade: true,
-    asNavFor: '.numbers-hotels-nav',
     responsive: [
         {
             breakpoint: 992,
@@ -56,8 +54,9 @@ $('.numbers-hotels-gallery').slick({
 
 $('.hotels-slider').slick({
     slidesToShow: 1,
-    centerMode: true,
-    variableWidth: true,
+    fade: true,
+    // centerMode: true,
+    // variableWidth: true,
     prevArrow: '<button type="button" class="slick-prev"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n' +
         '\t viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">\n' +
         '<g>\n' +
@@ -80,15 +79,6 @@ $('.hotels-slider').slick({
         '\t</g>\n' +
         '</g>\n' +
         '</svg>\n</button>',
-    responsive: [
-        {
-            breakpoint: 1199,
-            settings: {
-                centerMode: false,
-                variableWidth: false,
-            }
-        }
-    ]
 });
 
 $('.news-slider').slick({
@@ -229,11 +219,13 @@ $('.dropdown').on('click', function () {
 });
 
 $('.btn-menu').on('click', function () {
-   $('.mobile-menu').fadeIn();
+   $('.overlay').fadeIn();
+    $('.mobile-menu').fadeIn();
 
 });
 
 $('.btn-close').on('click', function () {
+    $('.overlay').fadeOut();
     $('.mobile-menu').fadeOut();
 
 });

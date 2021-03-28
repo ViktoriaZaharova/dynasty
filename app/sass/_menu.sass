@@ -3,7 +3,7 @@
 .mobile-menu
   display: none
   position: fixed
-  left: 0
+  right: 0
   top: 0
   height: 100%
   z-index: 5
@@ -11,7 +11,7 @@
     size: cover
   padding: 45px 50px
   overflow-x: auto
-  max-width: 855px
+  max-width: 426px
   width: 100%
   font-family: "Open Sans", sans-serif
   .logo
@@ -21,41 +21,50 @@
     max-width: 400px
     margin: 0 auto 40px
   .btn-white
-    height: 91px
-    font-size: 30px
+    height: 50px
+    font-size: 16px
     font-weight: 600
     font-family: "Open Sans", sans-serif
-    max-width: 365px
-    margin: 0 50px 0 0
+    max-width: 160px
+    margin: 0 auto 0 0
     width: 100%
-  .list-social li a
-    .social-icon
-      margin: 0
-    .svg-icon
-      fill: #fff
+  .list-social
+    margin: 20px 0 0
+    li
+      margin: 0 20px 0 0
+      &:last-child
+        margin: 0
+      a
+        .social-icon
+          margin: 0
+        .svg-icon
+          fill: #fff
   .inst-links
     .social-icon
-      width: 50px
-      height: 50px
+      width: 30px
+      height: 30px
   .fb-links
     .social-icon
-      width: 40px
-      height: 50px
+      width: 30px
+      height: 40px
   .phone
-    font-size: 55px
+    font-size: 24px
+    text-align: right
     color: #fff
-    margin: 0 0 40px
+    margin: 0 0 20px
   .mail
-    font-size: 30px
+    font-size: 18px
     color: #fff
+    text-align: right
     width: fit-content
     border-bottom: 1px solid $accent
+    margin: 0 0 0 auto
 
 
 .btn-close
-  position: absolute
-  top: 87px
-  left: 55px
+  position: fixed
+  top: 1.5rem
+  right: 1.5rem
   width: 40px
   height: 40px
   display: flex
@@ -76,29 +85,32 @@
     transform: rotate(135deg)
 
 .links-doc
-  font-size: 30px
+  font-size: 14px
 
 .mobile-menu__footer
   width: 100%
   display: flex
   align-items: flex-start
-  justify-content: space-between
+  justify-content: flex-end
+
   flex-wrap: wrap
-  padding: 60px 0 0
-  margin: 50px 0 0
+  padding: 20px 0 20px 20px
+  margin: 20px 0 0
   border-top: 1px solid $accent
+  .mobile-menu__box
+    width: 100%
 
 .menu
-  margin: 0 0 200px
-  padding: 0 0 0 50px
+  margin: 0 0 60px
   li
-    margin: 0 0 45px
+    margin: 0 0 20px
     &:last-child
       margin: 0
     a
       color: #fff
-      font-size: 36px
+      font-size: 20px
       font-weight: 600
+
 
 .dropdown
   .menu-links
@@ -122,8 +134,18 @@
   display: none
   margin: 35px 0
   li
-    margin: 0 0 30px
+    margin: 0 0 20px
     a
       font-weight: normal
       color: #bbbbbb
-      font-size: 30px
+      font-size: 18px
+
+.overlay
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  display: none
+  background: rgba(29,29,27,.65)
+  z-index: 2
